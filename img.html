@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        
+            <img id="img1" alt="swapnil" width="70%" height="400px"/>
+        
+   
+    <div>
+    <button onclick="first()">first</button>
+    <button onclick="next()">next</button>
+    <button onclick="pre()">preves</button>
+    <button onclick="last()">last</button>
+</div>
+<script>
+    var arr=["./asset/img1.jpg","./asset/img10.jpg","./asset/img2.jpg","./asset/img3.jpg","./asset/img5.jpg"];
+    count=0;
+    var a=document.getElementById("img1");
+    function first(){
+        a.setAttribute("src",`${arr[0]}`);
+   
+    }
+
+    function next(){
+        count++;
+        a.setAttribute("src",arr[count]);
+        if(count==5){
+        alert("this is last image");
+       
+    }
+    a.setAttribute("src",`${arr[count]}`);
+}
+
+function pre(){
+    count--;
+      a.setAttribute("src",`${arr[count]}`);
+       if(count==0){
+        alert("this is first image");
+    }
+}
+
+function last(){
+    a.setAttribute("src",`${arr[arr.length-1]}`);
+    count=arr.length-1;
+    
+    
+}
+    
+</script>
+</body>
+</html>
